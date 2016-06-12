@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <title>Супер сайт</title>
+ <link rel="stylesheet" href="dist/css/style.css">
+ <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+<style>
+    #asdff{
+        width: 100px;
+        height: 200px;
+        background: #000;
+    }
+    img{
+        width: 300px;
+    }
+</style>
+</head>
+
+<body>
+<form method="POST" action="https://api.privatbank.ua/p24api/ishop">
+<input type="hidden" name="amt" value="1.00" />
+<input type="hidden" name="ccy" value="UAH" />
+<input type="hidden" name="merchant" value="118924" />
+<input type="hidden" name="order" value="aefasvasdf" />
+<input type="hidden" name="details" value="Сторінка, що приймає клієнта після оплати" />
+<input type="hidden" name="ext_details" value="Опис товару №..." />
+<input type="hidden" name="pay_way" value="privat24" />
+<input type="hidden" name="return_url" value="https://mostasia.com.ua" />
+<input type="hidden" name="server_url" value="https://..." />
+<button type="submit"><img src="img/buttons/api_logo_1.jpg" border="0" /></button>
+</form>
+<div class="container" id="container">
+
+<div class="coin" id='coin'>
+    <figure class="heads">
+    </figure>
+    <figure class="tails">
+    </figure>
+    <figure class="left-1"></figure>
+    <figure class="left-2"></figure>
+    <figure class="right"></figure>
+</div>
+
+
+</div>
+
+<script>
+let a = 3;
+console.log(a);
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+/* DOM Utility Functions from PastryKit */
+Element.prototype.hasClassName = function (a) {
+    return new RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className);
+};
+
+Element.prototype.addClassName = function (a) {
+    if (!this.hasClassName(a)) {
+        this.className = [this.className, a].join(" ");
+    }
+};
+
+Element.prototype.removeClassName = function (b) {
+    if (this.hasClassName(b)) {
+        var a = this.className;
+        this.className = a.replace(new RegExp("(?:^|\\s+)" + b + "(?:\\s+|$)", "g"), " ");
+    }
+};
+
+Element.prototype.toggleClassName = function (a) {
+  this[this.hasClassName(a) ? "removeClassName" : "addClassName"](a);
+};
+/* /DOM Utility Functions from PastryKit */
+
+var init = function() {
+    
+    document.getElementById('coin').addEventListener( 'click', function(){
+    
+        var headsortails =  getRandomInt(1, 2);
+        console.log(headsortails);
+        if (headsortails == 1){
+           document.getElementById('coin').toggleClassName('flip_back');
+        }else{
+            document.getElementById('coin').toggleClassName('flip');
+        }
+
+  }, false);
+}
+
+
+
+window.addEventListener( 'DOMContentLoaded', init, false);
+
+// function innerHtml() {
+//     for (var i = 0; i < 15000; i++){
+//         document.getElementById('asdf').innerHTML += 'a';
+//     }
+// }
+// // innerHtml();
+
+// function innerHTMLLoop2() {
+//     var content = '';
+//     for (var count = 0; count < 15000; count++) {
+//     content += 'a<br>';
+//     }
+// document.getElementById('asdf').innerHTML += content;
+// }
+// innerHTMLLoop2();
+// alert('Syper sait');
+// function title(title){
+// document.title = title;
+// }
+// var bla = document.getElementById('asdff');
+// document.body.write(bla);
+// setTimeout(document.bgColor = 'red', 5000);
+// var string1 = document.getElementById('asdff').innerHTML;
+// var string2 = document.getElementById('asdfff').innerHTML;
+// console.log(Math.sqrt(3));
+// console.log( Math.floor(Math.random() * (10 - 0 + 1)) + 0);
+
+// if (new Boolean(false)) {
+//       console.log('Hello');
+//   }
+
+// function sum(num1, num2){
+//     var sum = num1 + num2;
+//     return sum;
+// }
+//  document.querySelector("#asdff").addEventListener("click", function (e) {
+
+//       // Обеспечиваем, чтобы менялся цвет только выбранного элемента, задавая цель события.
+
+//       e.target.classList.add('green');
+//     console.log( sum(5, 10) );
+
+//   });
+ // var a=0
+ // $('button').click(function(){
+ //  console.log(a++);
+ // });
+ // document.getElementById("input1").placeholder = "Type name here..";
+
+ //       
+ //       var i = 1;
+ //         for (var i = 0; i < 10;) {
+ //          
+ //           console.log(i);
+ //         }
+ //      };
+ //      myPlace();
+    //   function printNumbersInterval() {
+    //   var i = 1;
+    //   var timerId = document.getElementById("my_button").click(function() {
+    //     console.log(i);
+    //     if (i == 20)
+    //     i++;
+    //   });
+    // }
+    
+    // // вызов
+    // printNumbersInterval();
+    
+
+// document.getElementById("my_button");
+// var bla = document.getElementsByTagName("div");
+// console.log(bla);
+</script>
+</body>
+</html>
